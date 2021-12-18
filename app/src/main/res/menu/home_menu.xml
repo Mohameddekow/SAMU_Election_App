@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+
+        <item
+            android:icon="@drawable/ic_profile"
+            android:id="@+id/profileFragment"
+            android:title="Profile"/>
+
+        <item
+            android:icon="@drawable/ic_contestants"
+            android:id="@+id/settingsFragment"
+            android:title="Settings"/>
+
+    </group>
+
+    <item
+
+        android:id="@+id/adminPanel"
+        android:icon="@drawable/ic_access_control"
+        android:title="Admin Panel">
+
+        <menu>
+            <item
+                android:icon="@drawable/ic_add_voter"
+                android:id="@+id/addContestantsFragment"
+                android:title="Register Contestant"/>
+            <item
+                android:icon="@drawable/ic_add_voter"
+                android:id="@+id/addVotersFragment"
+                android:title="Register Voters"/>
+
+        </menu>
+    </item>
+</menu>
