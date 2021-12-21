@@ -1,14 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.admin.voters.AddVotersFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="Add Voter"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/loginText"
+        app:layout_constraintStart_toStartOf="@id/loginText"
+        app:layout_constraintEnd_toEndOf="@id/loginText"
+        android:layout_margin="25dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+            android:hint="Voter's name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="6dp"
+            android:fontFamily="monospace"
+            android:hint="Voter's email"
+            android:inputType="textEmailAddress"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvEmail"
+        app:layout_constraintStart_toStartOf="@+id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRegNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="6dp"
+            android:hint="Reg number"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/voterImage"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvPassword"
+        app:layout_constraintStart_toStartOf="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword"
+       android:src="@drawable/profile" />
+
+    <FrameLayout
+        android:id="@+id/addImageFrameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/voterImage"
+        app:layout_constraintEnd_toEndOf="@+id/voterImage"
+        app:layout_constraintStart_toStartOf="@+id/voterImage"
+        app:layout_constraintTop_toTopOf="@+id/voterImage">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_add_a_photo_24"
+            app:layout_constraintEnd_toEndOf="@+id/tvPassword"
+            app:layout_constraintStart_toStartOf="@+id/tvPassword"
+            app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+    </FrameLayout>
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="Register"
+        android:textSize="17sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvPassword"
+        app:layout_constraintStart_toStartOf="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/voterImage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

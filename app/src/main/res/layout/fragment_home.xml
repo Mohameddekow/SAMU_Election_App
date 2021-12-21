@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_fragment_home_backg"
-    tools:context=".HomeFragment">
+    tools:context=".home.HomeFragment">
 
 
     <TextView
@@ -68,169 +68,183 @@
         app:layout_constraintStart_toEndOf="@+id/homeElectionTv"
         app:layout_constraintTop_toTopOf="@+id/homeElectionTv" />
 
-
-<!--    //contestants card view-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/contestantsCardView"
-        android:layout_width="180dp"
-        android:layout_height="210dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeElectionCountDownTv">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_card_view_backg"
-            android:orientation="vertical">
-
-
-            <ImageView
-                android:id="@+id/contestantsImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_contestants_24" />
-
-            <TextView
-                android:id="@+id/contestantsTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Contestants"
-                android:textColor="@color/black"
-                android:textSize="27sp"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-
-<!--    //vote card view-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/voteCardView"
-        android:layout_width="180dp"
-        android:layout_height="210dp"
-        android:layout_marginHorizontal="10dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintStart_toEndOf="@+id/contestantsCardView"
-        app:layout_constraintTop_toTopOf="@+id/contestantsCardView">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_card_view_backg"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/voteImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_vote_24" />
-
-            <TextView
-                android:id="@+id/voteTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Vote"
-                android:textColor="@color/black"
-                android:textSize="27sp"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-
-<!--    //results card view-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/resultCardView"
-        android:layout_width="180dp"
-        android:layout_height="210dp"
-        android:layout_marginStart="20dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/homeRecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
+        android:layout_marginHorizontal="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contestantsCardView">
+        app:layout_constraintTop_toBottomOf="@+id/homeElectionTv" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_card_view_backg"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/resultImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_result_24" />
-
-            <TextView
-                android:id="@+id/resultTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Result"
-                android:textColor="@color/black"
-                android:textSize="27sp"
-                android:textStyle="bold" />
+    </androidx.recyclerview.widget.RecyclerView>
 
 
-        </LinearLayout>
+    <!--&lt;!&ndash;    //contestants card view&ndash;&gt;-->
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/contestantsCardView"-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="210dp"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        android:layout_marginTop="80dp"-->
+    <!--        app:cardCornerRadius="8dp"-->
+    <!--        app:cardElevation="4dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/homeElectionCountDownTv">-->
 
-    </androidx.cardview.widget.CardView>
-
-    <!--    //help card view-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/helpCardView"
-        android:layout_width="180dp"
-        android:layout_height="210dp"
-        android:layout_marginHorizontal="10dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintStart_toEndOf="@+id/resultCardView"
-        app:layout_constraintTop_toTopOf="@+id/resultCardView">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_card_view_backg"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/helpImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_help_24" />
-
-            <TextView
-                android:id="@+id/helpTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Help"
-                android:textColor="@color/black"
-                android:textSize="27sp"
-                android:textStyle="bold" />
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/ic_card_view_backg"-->
+    <!--            android:orientation="vertical">-->
 
 
-        </LinearLayout>
+    <!--            <ImageView-->
+    <!--                android:id="@+id/contestantsImageView"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="0.4"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:src="@drawable/ic_contestants_24" />-->
 
-    </androidx.cardview.widget.CardView>
+    <!--            <TextView-->
+    <!--                android:id="@+id/contestantsTextView"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="Contestants"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="27sp"-->
+    <!--                android:textStyle="bold" />-->
+
+
+    <!--        </LinearLayout>-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+
+    <!--&lt;!&ndash;    //vote card view&ndash;&gt;-->
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/voteCardView"-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="210dp"-->
+    <!--        android:layout_marginHorizontal="10dp"-->
+    <!--        app:cardCornerRadius="8dp"-->
+    <!--        app:cardElevation="4dp"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/contestantsCardView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/contestantsCardView">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/ic_card_view_backg"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/voteImageView"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="0.6"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:src="@drawable/ic_vote_24" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/voteTextView"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="Vote"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="27sp"-->
+    <!--                android:textStyle="bold" />-->
+
+
+    <!--        </LinearLayout>-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+
+    <!--&lt;!&ndash;    //results card view&ndash;&gt;-->
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/resultCardView"-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="210dp"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        app:cardCornerRadius="8dp"-->
+    <!--        app:cardElevation="4dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/contestantsCardView">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/ic_card_view_backg"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/resultImageView"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="0.6"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:src="@drawable/ic_result_24" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/resultTextView"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="Result"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="27sp"-->
+    <!--                android:textStyle="bold" />-->
+
+
+    <!--        </LinearLayout>-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <!--    &lt;!&ndash;    //help card view&ndash;&gt;-->
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/helpCardView"-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="210dp"-->
+    <!--        android:layout_marginHorizontal="10dp"-->
+    <!--        app:cardCornerRadius="8dp"-->
+    <!--        app:cardElevation="4dp"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/resultCardView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/resultCardView">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/ic_card_view_backg"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/helpImageView"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_weight="0.6"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:src="@drawable/ic_help_24" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/helpTextView"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="Help"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="27sp"-->
+    <!--                android:textStyle="bold" />-->
+
+
+    <!--        </LinearLayout>-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

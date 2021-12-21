@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.samuelectionapp.R
 import com.example.samuelectionapp.databinding.FragmentChooseSchoolVoteBinding
+import com.example.samuelectionapp.fragments.results.chooseSchool.ChooseSchoolResultsRecyclerViewAdapter
+import com.example.samuelectionapp.globalData.GlobalData
 
 class ChooseSchoolVoteFragment : Fragment() {
 
@@ -22,6 +25,16 @@ class ChooseSchoolVoteFragment : Fragment() {
         _binding = FragmentChooseSchoolVoteBinding.inflate(inflater, container, false)
 
 
+        //adapter
+        val chooseSchoolAdapter = ChooseSchoolVoteFragmentRecyclerViewAdapter()
+        val data = GlobalData.chooseSchool
+        binding.apply {
+            chooseSchoolVoteRecyclerView.adapter = chooseSchoolAdapter
+
+            chooseSchoolVoteRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+
+            chooseSchoolAdapter.setData(data)
+        }
 
         return binding.root
     }

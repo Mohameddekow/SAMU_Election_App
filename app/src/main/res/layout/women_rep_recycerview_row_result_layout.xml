@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:padding="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/womenRepProfileImage"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/profile"
+        app:civ_border_color="@color/teal_200"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/womenRepName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="Name:"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/womenRepProfileImage"
+        app:layout_constraintTop_toTopOf="@+id/womenRepProfileImage" />
+
+    <TextView
+        android:id="@+id/womenRepSchool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="School:"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/womenRepProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/womenRepName" />
+
+    <TextView
+        android:id="@+id/womenRepPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:text="Position:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/womenRepProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/womenRepSchool" />
+
+    <TextView
+        android:id="@+id/womenRepResult"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:text="59%"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

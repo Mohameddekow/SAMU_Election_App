@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.admin.adminLogin.AdminLoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="Admin login"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvLogin"
+        app:layout_constraintTop_toBottomOf="@id/loginText"
+        app:layout_constraintStart_toStartOf="@id/loginText"
+        app:layout_constraintEnd_toEndOf="@id/loginText"
+        android:layout_margin="25dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLogin"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+            android:hint="Admin Ref number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@id/tvLogin"
+        app:layout_constraintStart_toStartOf="@id/tvLogin"
+        app:layout_constraintEnd_toEndOf="@id/tvLogin"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_margin="20dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:drawableStart="@drawable/ic_password"
+            android:drawablePadding="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:hint="password" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/forgotPassword"
+        android:text="Forgot password"
+        android:textSize="17sp"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="@id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@id/tvPassword"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        app:layout_constraintTop_toBottomOf="@id/forgotPassword"
+        app:layout_constraintStart_toStartOf="@id/tvLogin"
+        app:layout_constraintEnd_toEndOf="@id/tvLogin"
+        android:fontFamily="monospace"
+        android:textSize="17sp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/btnLogin"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

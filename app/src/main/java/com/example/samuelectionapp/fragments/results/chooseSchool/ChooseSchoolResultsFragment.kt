@@ -5,8 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.samuelectionapp.R
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.samuelectionapp.databinding.FragmentChooseSchoolResultsBinding
+import com.example.samuelectionapp.globalData.GlobalData
 
 class ChooseSchoolResultsFragment : Fragment() {
 
@@ -21,7 +22,16 @@ class ChooseSchoolResultsFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentChooseSchoolResultsBinding.inflate(inflater, container, false)
 
+        //adapter
+        val chooseSchoolAdapter = ChooseSchoolResultsRecyclerViewAdapter()
+        val data = GlobalData.chooseSchool
+        binding.apply {
+            chooseSchoolResultRecyclerView.adapter = chooseSchoolAdapter
 
+            chooseSchoolResultRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+
+            chooseSchoolAdapter.setData(data)
+        }
 
         return binding.root
     }

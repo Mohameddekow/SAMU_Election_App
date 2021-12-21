@@ -31,6 +31,10 @@
                 android:icon="@drawable/ic_add_voter"
                 android:id="@+id/addVotersFragment"
                 android:title="Register Voters"/>
+            <item
+                android:icon="@drawable/ic_baseline_timer_24"
+                android:id="@+id/setElectionTimeFragment"
+                android:title="Set Election Time"/>
 
         </menu>
     </item>

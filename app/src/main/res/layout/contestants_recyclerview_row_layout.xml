@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/contestantsImage"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/profile"
+        app:civ_border_color="@color/teal_200"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/contestantsImage"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/contestantsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginVertical="4dp"
+            android:text="Name: Mohamed Dekow"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/contestantsImage"
+            app:layout_constraintTop_toTopOf="@id/contestantsImage" />
+
+        <TextView
+            android:id="@+id/contestantsSchool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="School: Computing and informatics"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/contestantsImage"
+            app:layout_constraintTop_toBottomOf="@+id/contestantsName" />
+
+        <TextView
+            android:id="@+id/contestantsPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Position: Men's Rep"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/contestantsImage"
+            app:layout_constraintTop_toBottomOf="@+id/contestantsSchool" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

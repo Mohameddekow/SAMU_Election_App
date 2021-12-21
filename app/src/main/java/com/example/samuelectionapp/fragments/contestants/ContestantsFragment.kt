@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.samuelectionapp.R
 import com.example.samuelectionapp.databinding.FragmentContestantsBinding
+import com.example.samuelectionapp.globalData.GlobalData
 
 
 class ContestantsFragment : Fragment() {
@@ -23,6 +25,16 @@ class ContestantsFragment : Fragment() {
         _binding = FragmentContestantsBinding.inflate(inflater, container, false)
 
 
+        //adapter
+        val contestantAdapter = ContestantsRecyclerViewAdapter()
+
+        //damy data
+        val data = GlobalData.ContData
+        binding.apply {
+            contestantsRecyclerView.adapter = contestantAdapter
+            contestantsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+            contestantAdapter.setData(data)
+        }
 
 
         return binding.root

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.admin.SetElectionTimeFragment">
+
+    <TextView
+        android:id="@+id/setElectionTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="Set Election Time"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvSetElectionDay"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setElectionTimeText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSetElectionDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_timer_24"
+            android:drawablePadding="6dp"
+            android:fontFamily="monospace"
+            android:hint="Election Day (04/12/2020)"
+            android:inputType="textEmailAddress"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvSetElectionTime"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSetElectionDay">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSetElectionTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_timer_24"
+            android:drawablePadding="6dp"
+            android:fontFamily="monospace"
+            android:hint="Set Election Time (06:00)"
+            android:inputType="textEmailAddress"
+            android:maxLength="20"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="Set Time"
+        android:textSize="17sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvSetElectionTime"
+        app:layout_constraintStart_toStartOf="@+id/tvSetElectionTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvSetElectionTime" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/card_view_background.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_add_voter.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_a_photo_24.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_contestants.xml" value="0.3703125" />
         <entry key="app/src/main/res/drawable/ic_contestants_24.xml" value="0.3703125" />
         <entry key="app/src/main/res/drawable/ic_fragment_home_backg__1_.xml" value="0.3703125" />
         <entry key="app/src/main/res/drawable/ic_help_24.xml" value="0.3703125" />
@@ -12,17 +17,43 @@
         <entry key="app/src/main/res/drawable/ic_splash.xml" value="0.3703125" />
         <entry key="app/src/main/res/drawable/ic_vote_24.xml" value="0.3703125" />
         <entry key="app/src/main/res/drawable/ic_votenow.xml" value="0.3703125" />
+        <entry key="app/src/main/res/drawable/ic_whatsap_24.xml" value="0.3703125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/choose_school_result_recycleview_row_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/choose_school_result_recycleviewrow_layout.xml" value="0.3536458333333333" />
+        <entry key="app/src/main/res/layout/choose_school_vote_recycleview_row_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/contestants_recyclerview_row_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_add_contestants.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_add_voters.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_admin_login.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_choose_school.xml" value="0.34010416666666665" />
+        <entry key="app/src/main/res/layout/fragment_choose_school_results.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_choose_school_vote.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_contestants.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_header_layout.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_hearder_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_help.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_set_election_time.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/layout/fragment_voters.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/home_recyclerview_row.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/home_recyclerview_row_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/men_rep_header_result_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/men_rep_header_vote_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/men_rep_recycerview_row_result_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/men_rep_recycerview_row_vote_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/school_rep_header_result_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/school_rep_header_vote_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/school_rep_recycerview_row_result_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/school_rep_recycerview_row_vote_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/women_rep_header_result_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/women_rep_header_vote_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/women_rep_recycerview_row_result_layout.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/layout/women_rep_recycerview_row_vote_layout.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.3541666666666667" />
         <entry key="app/src/main/res/menu/home_menu.xml" value="0.3541666666666667" />
       </map>

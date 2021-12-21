@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.samuelectionapp.HomeFragment"
+        android:name="com.example.samuelectionapp.home.HomeFragment"
         android:label="  Dashboard"
         tools:layout="@layout/fragment_home">
         <action
@@ -38,20 +38,26 @@
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_adminLoginFragment"
-            app:destination="@id/adminLoginFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/adminLoginFragment"
-        android:name="com.example.samuelectionapp.fragments.admin.adminLogin.AdminLoginFragment"
-        android:label="Admin Login"
-        tools:layout="@layout/fragment_admin_login">
+            android:id="@+id/action_homeFragment_to_contestantsFragment"
+            app:destination="@id/contestantsFragment" />
         <action
-            android:id="@+id/action_adminLoginFragment_to_addVotersFragment2"
+            android:id="@+id/action_homeFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addVotersFragment"
             app:destination="@id/addVotersFragment" />
         <action
-            android:id="@+id/action_adminLoginFragment_to_addContestantsFragment2"
+            android:id="@+id/action_homeFragment_to_addContestantsFragment"
             app:destination="@id/addContestantsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chooseSchoolResultsFragment"
+            app:destination="@id/chooseSchoolResultsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chooseSchoolVoteFragment"
+            app:destination="@id/chooseSchoolVoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_setElectionTimeFragment"
+            app:destination="@id/setElectionTimeFragment" />
     </fragment>
     <fragment
         android:id="@+id/addVotersFragment"
@@ -73,4 +79,47 @@
         android:name="com.example.samuelectionapp.fragments.settings.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/contestantsFragment"
+        android:name="com.example.samuelectionapp.fragments.contestants.ContestantsFragment"
+        android:label="Contestants"
+        tools:layout="@layout/fragment_contestants" />
+    <fragment
+        android:id="@+id/voteNowFragment"
+        android:name="com.example.samuelectionapp.fragments.vote.voteNow.VoteNowFragment"
+        android:label="Vote now"
+        tools:layout="@layout/fragment_vote_now" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.samuelectionapp.fragments.help.HelpFragment"
+        android:label="Help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.example.samuelectionapp.fragments.results.viewResult.ResultsFragment"
+        android:label="Results"
+        tools:layout="@layout/fragment_results" />
+    <fragment
+        android:id="@+id/chooseSchoolResultsFragment"
+        android:name="com.example.samuelectionapp.fragments.results.chooseSchool.ChooseSchoolResultsFragment"
+        android:label="Choose school"
+        tools:layout="@layout/fragment_choose_school_results">
+        <action
+            android:id="@+id/action_chooseSchoolResultsFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseSchoolVoteFragment"
+        android:name="com.example.samuelectionapp.fragments.vote.chooseSchools.ChooseSchoolVoteFragment"
+        android:label="Choose school"
+        tools:layout="@layout/fragment_choose_school_vote" >
+        <action
+            android:id="@+id/action_chooseSchoolVoteFragment_to_voteNowFragment"
+            app:destination="@id/voteNowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setElectionTimeFragment"
+        android:name="com.example.samuelectionapp.fragments.admin.SetElectionTimeFragment"
+        android:label="Set Election Time"
+        tools:layout="@layout/fragment_set_election_time" />
 </navigation>
