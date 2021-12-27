@@ -28,7 +28,7 @@ class HomeFragment : Fragment(), HomeRecyclerViewAdapter.ItemClickListener {
         //adapter
         val myAdapter = HomeRecyclerViewAdapter(this)
 
-        //swt data on recyclerView
+        //set data on recyclerView
         val homeData = GlobalData.HomeData
         myAdapter.setData(homeData)
 
