@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".fragments.profile.ProfileFragment">
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profileImage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="330dp"
+        android:layout_height="310dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="70dp"
         android:src="@drawable/profile"
         app:civ_border_color="@color/teal_200"
         app:civ_border_width="2dp"
@@ -21,11 +20,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <FrameLayout
         android:id="@+id/addProfileImageFrameLayout"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/profileImage"
         app:layout_constraintEnd_toEndOf="@+id/profileImage">
@@ -40,36 +40,57 @@
             app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/profileName"
+    <LinearLayout
+        android:id="@+id/profileLinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Name: Mohamed Dekow"
-        android:textSize="25sp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+        app:layout_constraintTop_toBottomOf="@+id/profileImage">
 
-    <TextView
-        android:id="@+id/profileRegNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reg: CT201/10*****/20"
-        android:layout_marginTop="10dp"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/profileName"
-        app:layout_constraintTop_toBottomOf="@+id/profileName" />
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Name: Mohamed Dekow"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
-    <TextView
-        android:id="@+id/profileEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Email: Mohamed@dek.com"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/profileRegNumber"
-        app:layout_constraintTop_toBottomOf="@+id/profileRegNumber" />
+        <TextView
+            android:id="@+id/profileRegNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="Reg: CT201/10*****/20"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileName" />
+
+        <TextView
+            android:id="@+id/profileEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="Email: Mohamed@dek.com"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileRegNumber" />
+
+
+    </LinearLayout>
 
 
     <Button
@@ -77,15 +98,26 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="4dp"
-        android:layout_marginTop="44dp"
         android:layout_weight="1"
         android:fontFamily="monospace"
         android:text="Edit"
         android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="@+id/profileEmail"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/profileImage"
         app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="@+id/profileEmail"
-        app:layout_constraintTop_toBottomOf="@+id/profileEmail" />
+        app:layout_constraintStart_toStartOf="@+id/profileImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileLinearLayout" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/profileLinearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

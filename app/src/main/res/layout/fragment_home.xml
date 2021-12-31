@@ -7,54 +7,95 @@
     android:background="@drawable/ic_fragment_home_backg"
     tools:context=".home.HomeFragment">
 
-
-    <TextView
-        android:id="@+id/homeName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/parentLinearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="80dp"
-        android:text="Mohamed Dekow"
-        android:textColor="@color/black"
-        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/homeRegNo"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/userDetailsLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:maxWidth="250dp"
+                android:layout_weight="0.6"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/homeName"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mohamed Dekow"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/homeRegNo"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CT201/10*****/20"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/homeProfileImage"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_weight="0.4"
+                android:src="@drawable/profile"
+                app:civ_border_color="@color/teal_200"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
+        android:visibility="gone"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="6dp"
-        android:layout_marginStart="20dp"
-        android:text="CT201/10*****/20"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeName" />
+        app:layout_constraintBottom_toBottomOf="@+id/parentLinearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/parentLinearLayout"
+        app:layout_constraintStart_toStartOf="@+id/parentLinearLayout"
+        app:layout_constraintTop_toTopOf="@+id/parentLinearLayout" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginHorizontal="15dp"
-        android:src="@drawable/profile"
-        app:civ_border_color="@color/teal_200"
-        app:civ_border_width="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/homeName" />
+
 
     <TextView
         android:id="@+id/homeElectionTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:text="The Election ends in:"
         android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeRegNo" />
+        app:layout_constraintTop_toBottomOf="@+id/parentLinearLayout" />
 
     <TextView
         android:id="@+id/homeElectionCountDownTv"

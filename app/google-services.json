@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "726703853051",
+    "project_id": "samuelectionapp",
+    "storage_bucket": "samuelectionapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726703853051:android:9a6c4c28f600bc85afcf5e",
+        "android_client_info": {
+          "package_name": "com.example.samuelectionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726703853051-5h7r0p9bje4tfq8m1f20a7pme3jpkueu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByP5XGom-tUkjy7YPtNFvNTpo8yYqHumo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726703853051-5h7r0p9bje4tfq8m1f20a7pme3jpkueu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

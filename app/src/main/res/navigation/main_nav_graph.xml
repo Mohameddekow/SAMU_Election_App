@@ -12,10 +12,14 @@
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -25,6 +29,11 @@
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment2"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -33,31 +42,54 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/settingsFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_contestantsFragment"
-            app:destination="@id/contestantsFragment" />
+            app:destination="@id/contestantsFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_helpFragment"
-            app:destination="@id/helpFragment" />
+            app:destination="@id/helpFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_addVotersFragment"
-            app:destination="@id/addVotersFragment" />
+            app:destination="@id/addVotersFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_addContestantsFragment"
-            app:destination="@id/addContestantsFragment" />
+            app:destination="@id/addContestantsFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_chooseSchoolResultsFragment"
-            app:destination="@id/chooseSchoolResultsFragment" />
+            app:destination="@id/chooseSchoolResultsFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_chooseSchoolVoteFragment"
-            app:destination="@id/chooseSchoolVoteFragment" />
+            app:destination="@id/chooseSchoolVoteFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_setElectionTimeFragment"
-            app:destination="@id/setElectionTimeFragment" />
+            app:destination="@id/setElectionTimeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/addVotersFragment"
@@ -68,7 +100,13 @@
         android:id="@+id/addContestantsFragment"
         android:name="com.example.samuelectionapp.fragments.admin.contestants.AddContestantsFragment"
         android:label="Add  Contestants"
-        tools:layout="@layout/fragment_add_contestants" />
+        tools:layout="@layout/fragment_add_contestants" >
+        <action
+            android:id="@+id/action_addContestantsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/helpFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.samuelectionapp.fragments.profile.ProfileFragment"
@@ -106,7 +144,9 @@
         tools:layout="@layout/fragment_choose_school_results">
         <action
             android:id="@+id/action_chooseSchoolResultsFragment_to_resultsFragment"
-            app:destination="@id/resultsFragment" />
+            app:destination="@id/resultsFragment"
+            app:popUpTo="@id/helpFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/chooseSchoolVoteFragment"
@@ -115,7 +155,9 @@
         tools:layout="@layout/fragment_choose_school_vote" >
         <action
             android:id="@+id/action_chooseSchoolVoteFragment_to_voteNowFragment"
-            app:destination="@id/voteNowFragment" />
+            app:destination="@id/voteNowFragment"
+            app:popUpTo="@id/helpFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/setElectionTimeFragment"

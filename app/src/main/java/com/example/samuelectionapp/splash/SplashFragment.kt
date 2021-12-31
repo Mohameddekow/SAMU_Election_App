@@ -9,11 +9,13 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.samuelectionapp.R
 import com.example.samuelectionapp.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class SplashFragment : Fragment() {
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,9 +24,22 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentSplashBinding.inflate(inflater, container, false)
 
+        //check if user is already logged in if so skipp the login process
+        val  auth: FirebaseAuth = FirebaseAuth.getInstance()
+
         Handler().postDelayed(
             {
-                findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+                if (auth.currentUser != null){
+                    findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+                }else{
+                    findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+                }
+
+
+            //findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+            //findNavController().navigate(R.id.action_splashFragment_to_addContestantsFragment)
+
+
             },2000
         )
 

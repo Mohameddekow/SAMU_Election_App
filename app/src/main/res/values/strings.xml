@@ -5,4 +5,20 @@
     <string name="open">open</string>
     <string name="close">close</string>
 
+
+    <string name="name">Name: %1$s</string>
+    <string name="email">Email: %1$s</string>
+    <string name="school">School: %1$s</string>
+    <string name="position">Position: %1$s</string>
+    <string name="reg_number">Reg No: %1$s</string>
+
+
+    <string name="user_details"> Online! </string>
+    <string name="user_details_error"> Error: %1$s </string>
+
+    <string name="contestant_details"> contestant data retrieved </string>
+    <string name="contestant_details_error"> Error: %1$s </string>
+
+
 </resources>
+

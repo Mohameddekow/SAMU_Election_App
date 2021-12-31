@@ -40,7 +40,7 @@
             android:fontFamily="monospace"
             android:maxLength="20"
             android:maxLines="1"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:hint="Contestant name" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,10 +86,37 @@
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="6dp"
             android:hint="Reg number"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:maxLength="20"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
+
+<!--    &lt;!&ndash;Create a TextInputLayout and choose the style,-->
+<!--       for now we are choosing the OutlinedBox ExposedDropdownMenu   &ndash;&gt;-->
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--        android:id="@+id/tvAutoCompleteSchool"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:tooltipText="5dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/tvRegNumber"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tvRegNumber"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tvRegNumber">-->
+
+<!--        &lt;!&ndash; Inside text input layout add-->
+<!--              an auto complete text view-->
+<!--                and make its input type to none&ndash;&gt;-->
+<!--        <AutoCompleteTextView-->
+<!--            android:id="@+id/etAutoCompleteSchool"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:inputType="none"-->
+<!--            android:text="Choose School" />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvSchool"
@@ -108,8 +135,8 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="6dp"
-            android:hint="School"
-            android:inputType="textPassword"
+            android:hint="School (one word) e.g Computing"
+            android:inputType="text"
             android:maxLength="20"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -118,13 +145,11 @@
         android:id="@+id/tvPosition"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="350dp"
-        android:layout_marginTop="4dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="@+id/tvEmail"
         app:layout_constraintStart_toStartOf="@+id/tvRegNumber"
-        app:layout_constraintTop_toBottomOf="@+id/tvSchool">
-
+        app:layout_constraintTop_toBottomOf="@+id/tvSchool" >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPosition"
             android:layout_width="match_parent"
@@ -132,31 +157,45 @@
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="6dp"
             android:hint="Position"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:maxLength="20"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <TextView
+        android:id="@+id/counter"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="6dp"
+        android:text="Counter = 0"
+        android:textAlignment="center"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvPosition"
+        app:layout_constraintTop_toBottomOf="@+id/tvPosition" />
+
+
     <ImageView
-        android:id="@+id/voterImage"
+        android:id="@+id/addContestantsImage"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_marginTop="10dp"
         android:scaleType="fitXY"
         android:src="@drawable/profile"
         app:layout_constraintEnd_toEndOf="@+id/tvPosition"
         app:layout_constraintStart_toStartOf="@+id/tvPosition"
-        app:layout_constraintTop_toBottomOf="@+id/tvPosition" />
+        app:layout_constraintTop_toBottomOf="@+id/counter" />
 
     <FrameLayout
         android:id="@+id/addImageFrameLayout"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
-        app:layout_constraintBottom_toBottomOf="@+id/voterImage"
-        app:layout_constraintEnd_toEndOf="@+id/voterImage"
-        app:layout_constraintStart_toStartOf="@+id/voterImage"
-        app:layout_constraintTop_toTopOf="@+id/voterImage">
+        app:layout_constraintBottom_toBottomOf="@+id/addContestantsImage"
+        app:layout_constraintEnd_toEndOf="@+id/addContestantsImage"
+        app:layout_constraintStart_toStartOf="@+id/addContestantsImage"
+        app:layout_constraintTop_toTopOf="@+id/addContestantsImage">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -176,10 +215,20 @@
         android:fontFamily="monospace"
         android:text="Register"
         android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="@+id/voterImage"
-        app:layout_constraintStart_toStartOf="@+id/voterImage"
-        app:layout_constraintTop_toBottomOf="@+id/voterImage" />
+        app:layout_constraintEnd_toEndOf="@+id/addContestantsImage"
+        app:layout_constraintStart_toStartOf="@+id/addContestantsImage"
+        app:layout_constraintTop_toBottomOf="@+id/addContestantsImage" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+        app:layout_constraintStart_toStartOf="@+id/btnRegister"
+        app:layout_constraintTop_toTopOf="@+id/btnRegister" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
