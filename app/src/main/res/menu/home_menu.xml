@@ -15,11 +15,6 @@
             android:title="Settings"/>
 
         <item
-            android:icon="@drawable/ic_add_voter"
-            android:id="@+id/addVotersFragment"
-            android:title="Register Voters"/>
-
-        <item
             android:icon="@drawable/ic_contestants"
             android:id="@+id/logout"
             android:title="Logout"/>

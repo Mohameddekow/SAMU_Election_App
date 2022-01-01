@@ -23,6 +23,9 @@ import com.example.samuelectionapp.utils.Constants.CONTESTANTS_IMAGES
 import com.example.samuelectionapp.utils.Constants.ENGINEERING
 import com.example.samuelectionapp.utils.Constants.HEALTH
 import com.example.samuelectionapp.utils.Constants.MATHS
+import com.example.samuelectionapp.utils.Constants.MEN_REP
+import com.example.samuelectionapp.utils.Constants.SCHOOL_REP
+import com.example.samuelectionapp.utils.Constants.WOMEN_REP
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -84,6 +87,7 @@ class AddContestantsFragment : Fragment() {
         //  val contestantsStorageRef = FirebaseFirestore.getInstance().collection("contestants")
 
 
+        //formatting the school array in a way that can be retrieve from firebase
         val etTextName = binding.etSchool.text.toString()
         var trimmedName: String = "jjjj"
 
@@ -107,7 +111,7 @@ class AddContestantsFragment : Fragment() {
 
         if ( agri in etTextName){
             trimmedName = AGRICULTURE
-            contestantsSchool = "agriculture and food science"
+            contestantsSchool = "agriculture & food science"
 
         }
 
@@ -119,13 +123,13 @@ class AddContestantsFragment : Fragment() {
 
         if ( eng in etTextName){
             trimmedName = ENGINEERING
-            contestantsSchool = "engineering and architecture"
+            contestantsSchool = "engineering and architect"
 
         }
 
         if ( math in etTextName){
             trimmedName = MATHS
-            contestantsSchool = "Pure and applied Mathematics"
+            contestantsSchool = "Pure and applied Maths"
 
         }
 

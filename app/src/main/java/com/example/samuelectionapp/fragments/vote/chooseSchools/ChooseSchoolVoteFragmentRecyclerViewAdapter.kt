@@ -1,12 +1,17 @@
 package com.example.samuelectionapp.fragments.vote.chooseSchools
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.samuelectionapp.databinding.ChooseSchoolVoteRecycleviewRowLayoutBinding
 import com.example.samuelectionapp.fragments.results.ChooseSchoolItems
+import com.example.samuelectionapp.home.HomeItems
+import com.example.samuelectionapp.home.HomeRecyclerViewAdapter
 
-class ChooseSchoolVoteFragmentRecyclerViewAdapter():
+class ChooseSchoolVoteFragmentRecyclerViewAdapter(
+    private val clickListener: ItemClickListener
+):
     RecyclerView.Adapter<ChooseSchoolVoteFragmentRecyclerViewAdapter.ChooseSchoolVoteViewHolder>() {
 
     private var chooseSchoolList = emptyList<ChooseSchoolItems>()
@@ -24,7 +29,7 @@ class ChooseSchoolVoteFragmentRecyclerViewAdapter():
     override fun onBindViewHolder(holder: ChooseSchoolVoteViewHolder, position: Int) {
         val currentChooseSchoolItem = chooseSchoolList[position]
 
-        holder.onBind(currentChooseSchoolItem)
+        holder.onBind(currentChooseSchoolItem, clickListener)
     }
 
     override fun getItemCount(): Int {
@@ -36,11 +41,15 @@ class ChooseSchoolVoteFragmentRecyclerViewAdapter():
         val binding: ChooseSchoolVoteRecycleviewRowLayoutBinding
     ): RecyclerView.ViewHolder(binding.root){
 
-        fun onBind(chooseSchool: ChooseSchoolItems){
+        fun onBind(chooseSchoolItem: ChooseSchoolItems, action: ItemClickListener){
             binding.apply {
-                chooseSchoolImageView.setImageResource(chooseSchool.image)
-                chooseSchoolTextView.text = chooseSchool.name
+                chooseSchoolImageView.setImageResource(chooseSchoolItem.image)
+                chooseSchoolTextView.text = chooseSchoolItem.name
             }
+            binding.root.setOnClickListener {
+                action.onItemClicked(it, chooseSchoolItem, adapterPosition)
+            }
+
         }
 
     }
@@ -49,5 +58,8 @@ class ChooseSchoolVoteFragmentRecyclerViewAdapter():
         notifyDataSetChanged()
     }
 
+    interface ItemClickListener{
+        fun onItemClicked(view: View, chooseSchoolItem: ChooseSchoolItems, position: Int)
+    }
 
 }

@@ -5,13 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.samuelectionapp.R
 import com.example.samuelectionapp.databinding.FragmentChooseSchoolVoteBinding
-import com.example.samuelectionapp.fragments.results.chooseSchool.ChooseSchoolResultsRecyclerViewAdapter
+import com.example.samuelectionapp.fragments.results.ChooseSchoolItems
 import com.example.samuelectionapp.globalData.GlobalData
 
-class ChooseSchoolVoteFragment : Fragment() {
+class ChooseSchoolVoteFragment : Fragment(), ChooseSchoolVoteFragmentRecyclerViewAdapter.ItemClickListener {
 
     private var _binding: FragmentChooseSchoolVoteBinding? = null
     private val binding get() = _binding!!
@@ -26,7 +27,7 @@ class ChooseSchoolVoteFragment : Fragment() {
 
 
         //adapter
-        val chooseSchoolAdapter = ChooseSchoolVoteFragmentRecyclerViewAdapter()
+        val chooseSchoolAdapter = ChooseSchoolVoteFragmentRecyclerViewAdapter(this)
         val data = GlobalData.chooseSchool
         binding.apply {
             chooseSchoolVoteRecyclerView.adapter = chooseSchoolAdapter
@@ -39,8 +40,17 @@ class ChooseSchoolVoteFragment : Fragment() {
         return binding.root
     }
 
+    override fun onItemClicked(view: View, chooseSchoolItem: ChooseSchoolItems, position: Int) {
+        when(position){
+            2 -> { findNavController().navigate(R.id.action_chooseSchoolVoteFragment_to_computingVoteFragment)}
+            3 -> { findNavController().navigate(R.id.action_chooseSchoolVoteFragment_to_engineeringVoteFragment)}
+        }
+    }
+
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
     }
+
+
 }

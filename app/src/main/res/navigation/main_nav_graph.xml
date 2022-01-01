@@ -14,12 +14,24 @@
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:popUpTo="@id/splashFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
         <action
             android:id="@+id/action_splashFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/splashFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -28,12 +40,24 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
         <action
             android:id="@+id/action_loginFragment_to_homeFragment2"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -44,52 +68,112 @@
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
         <action
             android:id="@+id/action_homeFragment_to_contestantsFragment"
             app:destination="@id/contestantsFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
         <action
             android:id="@+id/action_homeFragment_to_helpFragment"
             app:destination="@id/helpFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
         <action
             android:id="@+id/action_homeFragment_to_addVotersFragment"
             app:destination="@id/addVotersFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
         <action
             android:id="@+id/action_homeFragment_to_addContestantsFragment"
             app:destination="@id/addContestantsFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
         <action
             android:id="@+id/action_homeFragment_to_chooseSchoolResultsFragment"
             app:destination="@id/chooseSchoolResultsFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
         <action
             android:id="@+id/action_homeFragment_to_chooseSchoolVoteFragment"
             app:destination="@id/chooseSchoolVoteFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
         <action
             android:id="@+id/action_homeFragment_to_setElectionTimeFragment"
             app:destination="@id/setElectionTimeFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
     </fragment>
     <fragment
         android:id="@+id/addVotersFragment"
@@ -105,7 +189,13 @@
             android:id="@+id/action_addContestantsFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/helpFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="false"
+
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -140,23 +230,79 @@
     <fragment
         android:id="@+id/chooseSchoolResultsFragment"
         android:name="com.example.samuelectionapp.fragments.results.chooseSchool.ChooseSchoolResultsFragment"
-        android:label="Choose school"
+        android:label="Choose school - Results"
         tools:layout="@layout/fragment_choose_school_results">
         <action
             android:id="@+id/action_chooseSchoolResultsFragment_to_resultsFragment"
             app:destination="@id/resultsFragment"
-            app:popUpTo="@id/helpFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
+
+            app:popUpTo="@id/chooseSchoolResultsFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_chooseSchoolResultsFragment_to_computingResultFragment"
+            app:destination="@id/computingResultFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
+
+            app:popUpTo="@id/chooseSchoolResultsFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_chooseSchoolResultsFragment_to_engineeringResultFragment"
+            app:destination="@id/engineeringResultFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
+
+            app:popUpTo="@id/chooseSchoolResultsFragment"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/chooseSchoolVoteFragment"
         android:name="com.example.samuelectionapp.fragments.vote.chooseSchools.ChooseSchoolVoteFragment"
-        android:label="Choose school"
-        tools:layout="@layout/fragment_choose_school_vote" >
+        android:label="Choose school - Vote"
+        tools:layout="@layout/fragment_choose_school_vote">
         <action
             android:id="@+id/action_chooseSchoolVoteFragment_to_voteNowFragment"
             app:destination="@id/voteNowFragment"
-            app:popUpTo="@id/helpFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
+
+            app:popUpTo="@id/chooseSchoolVoteFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_chooseSchoolVoteFragment_to_computingVoteFragment"
+            app:destination="@id/computingVoteFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
+
+            app:popUpTo="@id/chooseSchoolVoteFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_chooseSchoolVoteFragment_to_engineeringVoteFragment"
+            app:destination="@id/engineeringVoteFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
+
+            app:popUpTo="@id/chooseSchoolVoteFragment"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment
@@ -164,4 +310,24 @@
         android:name="com.example.samuelectionapp.fragments.admin.SetElectionTimeFragment"
         android:label="Set Election Time"
         tools:layout="@layout/fragment_set_election_time" />
+    <fragment
+        android:id="@+id/computingResultFragment"
+        android:name="com.example.samuelectionapp.fragments.results.chooseSchool.computing.ComputingResultFragment"
+        android:label="School of computing - Result"
+        tools:layout="@layout/fragment_computing_result" />
+    <fragment
+        android:id="@+id/computingVoteFragment"
+        android:name="com.example.samuelectionapp.fragments.vote.chooseSchools.computing.ComputingVoteFragment"
+        android:label="School of computing - Vote"
+        tools:layout="@layout/fragment_computing_vote" />
+    <fragment
+        android:id="@+id/engineeringVoteFragment"
+        android:name="com.example.samuelectionapp.fragments.vote.chooseSchools.engineering.EngineeringVoteFragment"
+        android:label="School of engineering - Vote"
+        tools:layout="@layout/fragment_engineering_vote" />
+    <fragment
+        android:id="@+id/engineeringResultFragment"
+        android:name="com.example.samuelectionapp.fragments.results.chooseSchool.engineering.EngineeringResultFragment"
+        android:label="School of engineering - Result"
+        tools:layout="@layout/fragment_engineering_result" />
 </navigation>

@@ -9,13 +9,14 @@
 
 
     <TextView
-        android:id="@+id/menRepTitle"
+        android:id="@+id/repTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:text="Men's Representative"
+        android:text="School of Computing"
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="30sp"
+        android:textColor="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

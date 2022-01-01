@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.samuelectionapp.R
 import com.example.samuelectionapp.databinding.FragmentContestantsBinding
@@ -85,9 +86,10 @@ class ContestantsFragment : Fragment() {
         //damy data
         //val data = GlobalData.ContData
         binding.apply {
-
             contestantsRecyclerView.adapter = contestantAdapter
             contestantsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+            contestantsRecyclerView.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
+
         }
 
 

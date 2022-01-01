@@ -15,6 +15,12 @@ object Constants {
 
     //SCHOOLS
     const val SCHOOL_ARRAY = "schoolArray"
+    const val POSITION_ARRAY = "positionArray"
+
+    const val SCHOOL_REP = "schoolRep"
+    const val MEN_REP = "menRep"
+    const val WOMEN_REP = "womenRep"
+
 
     const val COMPUTING = "computing"
     const val HEALTH = "health"

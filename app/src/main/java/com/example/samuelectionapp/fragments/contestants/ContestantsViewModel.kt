@@ -3,6 +3,7 @@ package com.example.samuelectionapp.fragments.contestants
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.example.samuelectionapp.home.UserObject
 import com.example.samuelectionapp.utils.Constants.COMPUTING
 import com.example.samuelectionapp.utils.Constants.CONTESTANTS
@@ -15,7 +16,7 @@ class ContestantsViewModel(): ViewModel() {
 
     private val rootRef: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    private val contestantsRef = rootRef.collection(CONTESTANTS).whereArrayContains(SCHOOL_ARRAY, COMPUTING)
+    private val contestantsRef = rootRef.collection(CONTESTANTS)   //.whereArrayContains(SCHOOL_ARRAY, COMPUTING)
     //to get contestants details
     private val _contestants: MutableLiveData<List<ContestantsObject>> = MutableLiveData()
     val contestants: LiveData<List<ContestantsObject>>
@@ -44,8 +45,15 @@ class ContestantsViewModel(): ViewModel() {
             for (snapshot in snapshots){
                val contestant = snapshot.toObject(ContestantsObject::class.java)
                contestants.add(contestant)
+
+
+//                var idLive: MutableLiveData<List<String>> = MutableLiveData()
+//                val id = snapshot.id
+//                idLive.value = listOf(id)
+
             }
            // snapshots.toObjects(ContestantsObject::class.java)
+
 
             _contestants.value = contestants
 

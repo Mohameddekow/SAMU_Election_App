@@ -6,11 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.samuelectionapp.databinding.ContestantsRecyclerviewRowLayoutBinding
 import com.example.samuelectionapp.utils.setImageWithPicasso
 
+
 class ContestantsRecyclerViewAdapter(
    // val context: Context,
    // private var contestantsList: List<ContestantsObject>
-    ):
-    RecyclerView.Adapter<ContestantsRecyclerViewAdapter.ContestantsRecyclerViewViewHolder>() {
+    ): RecyclerView.Adapter<ContestantsRecyclerViewAdapter.ContestantsRecyclerViewViewHolder>(){
 
 //    private var contestantsList = emptyList<ContestantsObject>()
 

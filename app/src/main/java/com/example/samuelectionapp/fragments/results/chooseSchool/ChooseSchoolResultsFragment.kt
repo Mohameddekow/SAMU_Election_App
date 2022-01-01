@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.samuelectionapp.R
 import com.example.samuelectionapp.databinding.FragmentChooseSchoolResultsBinding
+import com.example.samuelectionapp.fragments.results.ChooseSchoolItems
 import com.example.samuelectionapp.globalData.GlobalData
 
-class ChooseSchoolResultsFragment : Fragment() {
+class ChooseSchoolResultsFragment : Fragment(), ChooseSchoolResultsRecyclerViewAdapter.ItemClickListener {
 
     private var _binding: FragmentChooseSchoolResultsBinding? = null
     private val binding get() = _binding!!
@@ -23,7 +26,7 @@ class ChooseSchoolResultsFragment : Fragment() {
         _binding = FragmentChooseSchoolResultsBinding.inflate(inflater, container, false)
 
         //adapter
-        val chooseSchoolAdapter = ChooseSchoolResultsRecyclerViewAdapter()
+        val chooseSchoolAdapter = ChooseSchoolResultsRecyclerViewAdapter(this)
         val data = GlobalData.chooseSchool
         binding.apply {
             chooseSchoolResultRecyclerView.adapter = chooseSchoolAdapter
@@ -40,5 +43,12 @@ class ChooseSchoolResultsFragment : Fragment() {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    override fun onItemClicked(view: View, chooseSchoolItem: ChooseSchoolItems, position: Int) {
+        when(position){
+            2 -> { findNavController().navigate(R.id.action_chooseSchoolResultsFragment_to_computingResultFragment)}
+            3 -> { findNavController().navigate(R.id.action_chooseSchoolResultsFragment_to_engineeringResultFragment)}
+        }
     }
 }
