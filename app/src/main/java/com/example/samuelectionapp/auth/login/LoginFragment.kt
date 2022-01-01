@@ -38,7 +38,7 @@ class LoginFragment : Fragment() {
 
 
             if (!checkInputs(email, password)) {
-                //checking the inputs
+                //checking the inputs return empty fields error
             } else {
                 //sing in
                 signInUserWithEmailAndPassword(email, password)

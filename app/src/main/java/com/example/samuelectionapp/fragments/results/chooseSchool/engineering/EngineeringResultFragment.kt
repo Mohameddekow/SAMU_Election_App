@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -80,14 +81,17 @@ class EngineeringResultFragment : Fragment(), EngineeringResultRecyclerViewAdapt
     }
 
     override fun onItemClicked(view: View, contestantItem: ContestantsObject, position: Int) {
-        val snackbar = Snackbar.make(
-            binding.root,
-            "${contestantItem.contestantsName}, ${contestantItem.contestantsPosition} has ${contestantItem.contestantsCounter}% of the votes",
-            Snackbar.LENGTH_LONG
-        )
-        snackbar.setAction(" ") {
-            //no action
+
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Ok") { _, _ ->
+
         }
-        snackbar.show()
+        builder.setNegativeButton("") { _, _ ->
+
+        }
+        builder.setTitle("${contestantItem.contestantsName}-Result")
+        builder.setMessage("${contestantItem.contestantsName}, ${contestantItem.contestantsPosition} has ${contestantItem.contestantsCounter}% of the votes")
+        builder.create()
+        builder.show()
     }
 }

@@ -1,9 +1,11 @@
 package com.example.samuelectionapp.fragments.admin.contestants
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,7 +35,7 @@ import com.google.firebase.storage.FirebaseStorage
 
 private const val PICK_IMAGE_CODE = 1234
 
-class AddContestantsFragment : Fragment() {
+class AddContestantsFragment() : Fragment() {
 
     private var _binding: FragmentAddContestantsBinding? = null
     private val binding get() = _binding!!
@@ -42,6 +44,7 @@ class AddContestantsFragment : Fragment() {
 
     private lateinit var firebaseStorage: FirebaseStorage
     private lateinit var firestoreDb: FirebaseFirestore
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -55,7 +58,16 @@ class AddContestantsFragment : Fragment() {
 
 
         binding.btnRegister.setOnClickListener {
-            addContestantToFireStore()
+            val contestantName = binding.etName.text.toString().trim()
+            val contestantEmail = binding.etEmail.text.toString().trim()
+            val contestantRegNumber = binding.etRegNumber.text.toString().trim()
+            val contestantPosition = binding.etPosition.text.toString().trim()
+            var contestantsSchool = binding.etSchool.text.toString()
+            if (!checkInputs(contestantName,contestantEmail,contestantRegNumber, contestantsSchool, contestantPosition)){
+                //checking for inputs and return error if no input found
+            }else{
+                addContestantToFireStore()
+            }
         }
 
 
@@ -69,12 +81,13 @@ class AddContestantsFragment : Fragment() {
 
 
 
+
         return binding.root
     }
 
 
     //add contestants
-    private fun addContestantToFireStore(){
+    private fun addContestantToFireStore() {
 
         val contestantName = binding.etName.text
         val contestantEmail = binding.etEmail.text
@@ -98,36 +111,36 @@ class AddContestantsFragment : Fragment() {
         val eng = "eng"
         val math = "math"
 
-        if ( comp in etTextName){
+        if (comp in etTextName) {
             trimmedName = COMPUTING
             contestantsSchool = "computing and informatics "
         }
 
-        if ( health in etTextName){
+        if (health in etTextName) {
             trimmedName = HEALTH
             contestantsSchool = "health science"
 
         }
 
-        if ( agri in etTextName){
+        if (agri in etTextName) {
             trimmedName = AGRICULTURE
             contestantsSchool = "agriculture & food science"
 
         }
 
-        if ( bus in etTextName){
+        if (bus in etTextName) {
             trimmedName = BUSINESS
             contestantsSchool = "business and economics"
 
         }
 
-        if ( eng in etTextName){
+        if (eng in etTextName) {
             trimmedName = ENGINEERING
             contestantsSchool = "engineering and architect"
 
         }
 
-        if ( math in etTextName){
+        if (math in etTextName) {
             trimmedName = MATHS
             contestantsSchool = "Pure and applied Maths"
 
@@ -183,9 +196,13 @@ class AddContestantsFragment : Fragment() {
                 binding.progressBar.visibility = View.GONE
 
 
-                if (!contestantCreationTask.isSuccessful){
+                if (!contestantCreationTask.isSuccessful) {
                     Log.e("contestant creation", contestantCreationTask.exception.toString())
-                    Toast.makeText(requireContext(), "Filed to create a new contestant:: ${contestantCreationTask.exception}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "Filed to create a new contestant:: ${contestantCreationTask.exception}",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
                 }
 
@@ -197,7 +214,7 @@ class AddContestantsFragment : Fragment() {
                 contestantsSchool = " "
                 contestantPosition!!.clear()
 
-               // Toast.makeText(requireContext(), "created a new contestant", Toast.LENGTH_SHORT).show()
+                // Toast.makeText(requireContext(), "created a new contestant", Toast.LENGTH_SHORT).show()
 
 
                 //show the success snack bar
@@ -245,6 +262,43 @@ class AddContestantsFragment : Fragment() {
             }
         }
     }
+
+    //check 4 empty inputs
+    private fun checkInputs(
+        name: String,
+        email: String,
+        regNumber: String,
+        school: String,
+        position: String
+    ): Boolean {
+
+        when {
+
+            TextUtils.isEmpty(name)
+                    || TextUtils.isEmpty(email)
+                    || TextUtils.isEmpty(regNumber)
+                    || TextUtils.isEmpty(school)
+                    || TextUtils.isEmpty(position) -> {
+
+                val snackbar = Snackbar.make(
+                    binding.root,
+                    "All fields are required!!",
+                    Snackbar.LENGTH_LONG
+                )
+                snackbar.setAction("OK") {
+                    //no action
+                }
+                snackbar.show()
+            }
+            else -> {
+                return true
+            }
+
+
+        }
+        return false
+    }
+
 
     override fun onDestroyView() {
         _binding = null
