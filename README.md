@@ -43,3 +43,7 @@
 
  * Result
  * <image src="https://user-images.githubusercontent.com/61431856/147847121-dd4e111d-a281-445a-92f1-3344a8f08bd7.jpg" heght = 300 width = 200 />                <image src="https://user-images.githubusercontent.com/61431856/147847124-2c6eca26-79af-4b72-b8b6-4e9e1f094703.jpg" heght = 300 width = 200 />               <image src="https://user-images.githubusercontent.com/61431856/147847132-e0fb6723-ccf3-4a4c-912b-e345d3580f7d.jpg" heght = 300 width = 200 />
+
+
+## Disclaimer!
+# * I'm still working on the App, Therefore some features might not be fully functional as expected.
