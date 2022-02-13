@@ -1,5 +1,5 @@
 # SAMU_Election_App
-## SAMU_Election_Appis a School project project given to us by Dr. Amos Chege
+## SAMU_Election_Appis a School project assigned to me by Dr. Amos Chege
 ##  Dr. Amos Chege is a
 * Innovation Research Scientist @MeruUniversity 
 * Lecturer, Innovation Mentor & Coach @MeruUniversity, Ph.D. I.T. @MasindeMuliroUniversity, 
